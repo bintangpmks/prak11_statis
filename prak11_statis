@@ -1,0 +1,22 @@
+df_bintang = read.delim("clipboard")
+View(df_bintang)
+head(df_bintang)
+
+model <- aov(Korosi~Metode, data=df_bintang)
+summary(model)
+
+tukey.test <- TukeyHSD(model)
+tukey.test
+
+
+#TUGAS 2
+df_bintang=PlantGrowth
+View(df_bintang)
+
+#analisis anova
+model <- aov(weight~group, data=df_bintang)
+summary(model)
+
+#Analisis Tukey Test
+tukey.test <- TukeyHSD(model)
+tukey.test
